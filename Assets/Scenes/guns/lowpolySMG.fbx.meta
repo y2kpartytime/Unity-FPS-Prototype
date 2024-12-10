@@ -82,10 +82,10 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 35
     normalImportMode: 0
-    tangentImportMode: 3
-    normalCalculationMode: 4
+    tangentImportMode: 2
+    normalCalculationMode: 0
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
+    blendShapeNormalImportMode: 0
     normalSmoothingSource: 3
   referencedClips: []
   importAnimation: 1

@@ -3,7 +3,17 @@ guid: c2a9d1ca2ab0b0c4c8b8551f2330918e
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 06e092ebcee89644ebd01785c3925947, type: 2}
+  - first:
+      type: UnityEngine:Texture2D
+      assembly: UnityEngine.CoreModule
+      name: pistol_tex
+    second: {fileID: 2800000, guid: ff6a22ef8421a0e4e85b7f0df419c2ae, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0

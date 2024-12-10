@@ -3,8 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|c:\\users\\ted\\desktop\\unity-fps-prototype\\assets\\scripts\\fps controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fps controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|c:\\users\\ted\\desktop\\unity-fps-prototype\\assets\\scripts\\gunscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gunscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|c:\\users\\ted\\desktop\\unity-fps-prototype\\assets\\scripts\\fpscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D0896BFC-A8B2-666F-2656-4F585350F438}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\fpscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "fps controller.cs",
-              "DocumentMoniker": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\fps controller.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\fps controller.cs",
-              "ToolTip": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\fps controller.cs",
-              "RelativeToolTip": "Assets\\Scripts\\fps controller.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAcwF4AAAAoAAAAAAAAAA==",
+              "Title": "GunScript.cs",
+              "DocumentMoniker": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\GunScript.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GunScript.cs",
+              "ToolTip": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\GunScript.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GunScript.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-09T22:09:18.138Z",
+              "WhenOpened": "2024-12-10T20:11:13.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FPScontroller.cs",
+              "DocumentMoniker": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\FPScontroller.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\FPScontroller.cs",
+              "ToolTip": "C:\\Users\\Ted\\Desktop\\Unity-FPS-Prototype\\Assets\\Scripts\\FPScontroller.cs",
+              "RelativeToolTip": "Assets\\Scripts\\FPScontroller.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-10T20:10:55.801Z",
               "EditorCaption": ""
             }
           ]
