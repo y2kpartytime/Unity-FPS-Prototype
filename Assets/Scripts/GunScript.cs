@@ -3,42 +3,89 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
+[System.Serializable]
+public class GunSounds
+{
+    public AudioClip shootSound; // Sound of firing
+    public AudioClip reloadSound; // Sound of reloading
+    public AudioClip dryFireSound; // Sound of dry fire (out of ammo)
+}
+
+public enum GunType
+{
+    Pistol,
+    SMG,
+    Shotgun,
+    // Add more gun types as needed
+}
+
 public class GunScript : MonoBehaviour
 {
     [SerializeField] public KeyCode shootKey = KeyCode.Mouse0;
+
+    [Header("Gun Paramaters")]
     public float damage = 10f;
     public float range = 100f;
-    public float fireRate = 15f;
+    public float fireRate = 0.1f;
+    public float nextTimeToFire = 0f;
+    public float bulletsPerMag = 15f;
+    public float bulletsLeft;
 
+    [Header("Audio Parameters")]
+    public AudioSource gunAudioSource; // The audio source for the gun sounds
+    public GunSounds gunSounds; // Reference to the sound effects for this gun
+    public GunType gunType; // Gun type for differentiating sound sets
+
+    private bool isReloading = false;
+
+    public float currentBullets; //Bullets in mag
+    float fireTimer;
+
+    [Header("Force Parameters")]
     public float impactForce = 30f;
-    public float impactRange = 2f;
 
-
+    [Header("Objects")]
     public Camera fpsCam;
     public GameObject impactEffect;
     public ParticleSystem muzzleFlash;
+    private Animator anim;
 
-    public float nextTimeToFire = 0f;
-
-
-    void Awake()
+    void Start()
     {
-        return;
+        anim = GetComponent<Animator>();
+        currentBullets = bulletsPerMag;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(shootKey) && Time.time >= nextTimeToFire)
+        if (Input.GetKeyDown(shootKey))
         {
-            nextTimeToFire = Time.time + 1 / fireRate;
             Shoot();
         }
+
+        if (fireTimer < fireRate)
+            fireTimer += Time.deltaTime;
     }
 
-    void Shoot()
+    void FixedUpdate()
     {
-        muzzleFlash.Play();
+        AnimatorStateInfo info = anim.GetCurrentAnimatorStateInfo(0);
+
+        if (info.IsName("Fire")) anim.SetBool("Fire", false);
+    }
+
+    private void Shoot()
+    {
+        if (fireTimer < fireRate) return;
+
+        if (currentBullets <= 0)
+        {
+            DryFire();
+            return;
+        }
+
+        muzzleFlash.Play(); // Muzzle flash
+        gunAudioSource.PlayOneShot(gunSounds.shootSound); // Play the shoot sound
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
@@ -51,12 +98,33 @@ public class GunScript : MonoBehaviour
                 target.TakeDamage(damage);
             }
 
-            Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
-
             if (hit.rigidbody != null)
             {
-                hit.rigidbody.AddForce(hit.normal * impactForce / impactRange);
+                hit.rigidbody.AddForce(hit.normal * impactForce);
             }
         }
+        anim.SetBool("Fire", true);
+        currentBullets--;
+        Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+        fireTimer = 0.0f; // Reset timer
+    }
+
+    private void DryFire()
+    {
+        if (bulletsLeft <= 0)
+        {
+            gunAudioSource.PlayOneShot(gunSounds.dryFireSound); // Play the dry fire sound when out of bullets
+        }
+    }
+
+    // Method for reloading (optional)
+    private void Reload()
+    {
+        if (isReloading) return;
+
+        isReloading = true;
+        gunAudioSource.PlayOneShot(gunSounds.reloadSound); // Play reload sound
+        currentBullets = bulletsPerMag;
+        isReloading = false;
     }
 }

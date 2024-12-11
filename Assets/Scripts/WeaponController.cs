@@ -10,6 +10,8 @@ public class WeaponSway : MonoBehaviour
     [SerializeField] private float smooth;
     [SerializeField] private float multiplier;
 
+   
+
     private void Update()
     {
         // get mouse input
