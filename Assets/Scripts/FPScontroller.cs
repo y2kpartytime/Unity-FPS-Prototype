@@ -21,6 +21,7 @@ public class FPScontroller : MonoBehaviour
     [SerializeField] private KeyCode sprintKey = KeyCode.LeftShift;
     [SerializeField] private KeyCode jumpKey = KeyCode.Space;
     [SerializeField] private KeyCode crouchKey = KeyCode.LeftControl;
+    
 
     [Header("Movement Parameters")]
     [SerializeField] private float walkSpeed = 3.0f;
