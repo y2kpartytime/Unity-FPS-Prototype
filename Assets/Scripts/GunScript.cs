@@ -113,7 +113,7 @@ public class GunScript : MonoBehaviour
     {
         if (bulletsLeft <= 0)
         {
-            gunAudioSource.PlayOneShot(gunSounds.dryFireSound); // Play the dry fire sound when out of bullets
+            
         }
     }
 
@@ -123,7 +123,6 @@ public class GunScript : MonoBehaviour
         if (isReloading) return;
 
         isReloading = true;
-        gunAudioSource.PlayOneShot(gunSounds.reloadSound); // Play reload sound
         currentBullets = bulletsPerMag;
         isReloading = false;
     }
